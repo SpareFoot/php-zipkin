@@ -66,23 +66,23 @@ class Span
     /**
      * @return string
      */
-    public function getName(): string
+    public function getName()
     {
-        return $this->name;
+        return (string) $this->name;
     }
 
     /**
      * @return Identifier
      */
-    public function getTraceId(): Identifier
+    public function getTraceId()
     {
-        return $this->traceId;
+        return  $this->traceId;
     }
 
     /**
      * @return Identifier
      */
-    public function getSpanId(): Identifier
+    public function getSpanId()
     {
         return $this->spanId;
     }
@@ -98,25 +98,25 @@ class Span
     /**
      * @return Annotation[]
      */
-    public function getAnnotations(): array
+    public function getAnnotations()
     {
-        return $this->annotations;
+        return (array) $this->annotations;
     }
 
     /**
      * @return BinaryAnnotation[]
      */
-    public function getBinaryAnnotations(): array
+    public function getBinaryAnnotations()
     {
-        return $this->binaryAnnotations;
+        return (array) $this->binaryAnnotations;
     }
 
     /**
      * @return bool
      */
-    public function getDebug(): bool
+    public function getDebug()
     {
-        return $this->debug;
+        return (bool) $this->debug;
     }
 
     /**
@@ -154,9 +154,9 @@ class Span
     /**
      * @return array
      */
-    public function toArray(): array
+    public function toArray()
     {
-        $parentSpanId = (string)$this->getParentSpanId();
+        $parentSpanId = (string) $this->getParentSpanId();
 
         return [
             'id'                => (string)$this->getSpanId(),
@@ -175,7 +175,7 @@ class Span
      * @param Annotation $annotation
      * @return array
      */
-    public function annotationToArray(Annotation $annotation): array
+    public function annotationToArray(Annotation $annotation)
     {
         return $annotation->toArray();
     }
@@ -184,7 +184,7 @@ class Span
      * @param BinaryAnnotation $binaryAnnotation
      * @return array
      */
-    public function binaryAnnotationToArray(BinaryAnnotation $binaryAnnotation): array
+    public function binaryAnnotationToArray(BinaryAnnotation $binaryAnnotation)
     {
         return $binaryAnnotation->toArray();
     }

@@ -32,17 +32,17 @@ class Annotation
     /**
      * @return int
      */
-    public function getTimestamp(): int
+    public function getTimestamp()
     {
-        return $this->timestamp;
+        return (int) $this->timestamp;
     }
 
     /**
      * @return string
      */
-    public function getValue(): string
+    public function getValue()
     {
-        return $this->value;
+        return (string) $this->value;
     }
 
     /**
@@ -115,7 +115,7 @@ class Annotation
     /**
      * @return array
      */
-    public function toArray(): array
+    public function toArray()
     {
         return [
             'value'     => $this->getValue(),

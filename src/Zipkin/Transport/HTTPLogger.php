@@ -41,7 +41,7 @@ class HTTPLogger implements LoggerInterface
             $options = [
                 'json' => array_map([$this, 'spanToArray'], $spans),
             ];
-
+            //throw new \Exception(print_r($options,1));
             $this->client->request('POST', $this->baseUrl, $options);
         } catch (RequestException $e) {
             throw new \Exception("Failed to publish trace: {$e->getMessage()}", $e->getCode(), $e);
@@ -52,7 +52,7 @@ class HTTPLogger implements LoggerInterface
      * @param Span $span
      * @return array
      */
-    public function spanToArray(Span $span): array
+    public function spanToArray(Span $span)
     {
         return $span->toArray();
     }

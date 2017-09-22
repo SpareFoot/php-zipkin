@@ -40,25 +40,25 @@ class BinaryAnnotation
     /**
      * @return string
      */
-    public function getKey(): string
+    public function getKey()
     {
-        return $this->key;
+        return (string) $this->key;
     }
 
     /**
      * @return string
      */
-    public function getValue(): string
+    public function getValue()
     {
-        return $this->value;
+        return (string) $this->value;
     }
 
     /**
      * @return int
      */
-    public function getType(): int
+    public function getType()
     {
-        return $this->type;
+        return (int) $this->type;
     }
 
     /**
@@ -90,7 +90,7 @@ class BinaryAnnotation
     /**
      * @return array
      */
-    public function toArray(): array
+    public function toArray()
     {
         return [
             'key'      => $this->getKey(),
